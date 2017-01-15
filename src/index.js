@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-const wrapWithClickOutside = (ToWrap) => {
-  class ClickOutside extends Component {
+const wrapWithClickOut = (ToWrap) => {
+  class ClickOut extends Component {
     constructor() {
       super();
       this.handler = this.handler.bind(this);
@@ -21,9 +21,9 @@ const wrapWithClickOutside = (ToWrap) => {
       const wrappedComponent = this.wrappedComponent;
 
       if ((!wrapperNode || !wrapperNode.contains(e.target)) &&
-        typeof wrappedComponent.handleClickOutside === 'function'
+        typeof wrappedComponent.handleClickOut === 'function'
       ) {
-        wrappedComponent.handleClickOutside(e);
+        wrappedComponent.handleClickOut(e);
       }
     }
 
@@ -36,8 +36,8 @@ const wrapWithClickOutside = (ToWrap) => {
       );
     }
   }
-  return ClickOutside;
+  return ClickOut;
 };
 
-export default wrapWithClickOutside;
+export default wrapWithClickOut;
 
