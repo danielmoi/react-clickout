@@ -1,0 +1,1 @@
+Higher Order Component providing clickout functionality for React components
