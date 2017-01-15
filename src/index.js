@@ -1,7 +1,7 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-module.exports = function wrapWithClickOutside(ToWrap) {
+const wrapWithClickOutside = (ToWrap) => {
   class ClickOutside extends Component {
     constructor() {
       super();
