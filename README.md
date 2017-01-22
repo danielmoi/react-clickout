@@ -23,24 +23,15 @@ npm install react-clickout
 
 Such a "`clickout`" event will call the wrapped component's `handleClickout` method.
 
-See the test suite for more example usage.
+See the test suite for more detailed example usage.
 
 ```js
 import React, { PropTypes, Component } from 'react';
 import wrapWithClickout from 'react-clickout';
 
 class ToWrap extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-  };
-  static defaultProps = {
-    text: '',
-  };
-
   constructor() {
-    super();
-    this.handleClickout = this.handleClickout.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    ...
     this.state = {
       isVisible: true,
     };
@@ -52,15 +43,14 @@ class ToWrap extends Component {
   }
 
   handleClick() {
-    this.handleClickout();
+    this.setState({
+      isVisible: !this.state.isVisible,
+    });
   }
 
   render() {
-    const { text } = this.props;
     return (
       <div className="to-wrap__container">
-
-        <div className="to-wrap__text">{text}</div>
 
         {this.state.isVisible
           ?
@@ -69,11 +59,8 @@ class ToWrap extends Component {
             null
         }
 
-        <button
-          className="to-wrap__button"
-          onClick={this.handleClick}
-        >
-          Hide Box
+        <button onClick={this.handleClick} >
+          Toggle Box
         </button>
 
       </div>
@@ -86,7 +73,7 @@ export default wrapWithClickout(ToWrap);
 
 ## Details
 - uses higher order functions (does not use mixins)
-- uses callback refs (does not use `ReactDOM.findDOMNode)` (which will eventually be deprecated (see [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md) and [here](https://github.com/yannickcr/eslint-plugin-react/issues/678#issue-165177220)]))
+- uses callback refs (does not use `ReactDOM.findDOMNode)` (which will eventually be deprecated (see [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md) and [here](https://github.com/yannickcr/eslint-plugin-react/issues/678#issue-165177220)))
 
 
 
