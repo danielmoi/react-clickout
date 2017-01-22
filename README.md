@@ -1,6 +1,111 @@
-[![Build Status](https://travis-ci.org/danielmoi/react-clickout.svg?branch=master)](https://travis-ci.org/danielmoi/react-clickout)
-[![npm version](https://badge.fury.io/js/react-clickout.svg)](https://badge.fury.io/js/react-clickout)
+
 
 # React Clickout
 
-Higher Order Component providing clickout functionality for React components
+[![Build Status](https://travis-ci.org/danielmoi/react-clickout.svg?branch=master)](https://travis-ci.org/danielmoi/react-clickout)
+[![npm version](https://badge.fury.io/js/react-clickout.svg)](https://badge.fury.io/js/react-clickout)
+
+Higher Order Component providing clickout functionality for React components.
+
+## Installation
+With Yarn:
+```
+yarn add react-clickout
+```
+
+With NPM:
+```
+npm install react-clickout
+```
+
+## Usage
+`react-clickout` returns a Higher Order Component that wraps a provided component with the ability to detect a `click` event outside of that component.
+
+Such a "`clickout`" event will call the wrapped component's `handleClickout` method.
+
+See the test suite for more example usage.
+
+```js
+import React, { PropTypes, Component } from 'react';
+import wrapWithClickout from 'react-clickout';
+
+class ToWrap extends Component {
+  static propTypes = {
+    text: PropTypes.string,
+  };
+  static defaultProps = {
+    text: '',
+  };
+
+  constructor() {
+    super();
+    this.handleClickout = this.handleClickout.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      isVisible: true,
+    };
+  }
+  handleClickout() {
+    this.setState({
+      isVisible: false,
+    });
+  }
+
+  handleClick() {
+    this.handleClickout();
+  }
+
+  render() {
+    const { text } = this.props;
+    return (
+      <div className="to-wrap__container">
+
+        <div className="to-wrap__text">{text}</div>
+
+        {this.state.isVisible
+          ?
+            <div className="box" />
+          :
+            null
+        }
+
+        <button
+          className="to-wrap__button"
+          onClick={this.handleClick}
+        >
+          Hide Box
+        </button>
+
+      </div>
+    );
+  }
+}
+
+export default wrapWithClickout(ToWrap);
+```
+
+## Details
+- uses higher order functions (does not use mixins)
+- uses callback refs (does not use `ReactDOM.findDOMNode)` (which will eventually be deprecated (see [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md) and [here](https://github.com/yannickcr/eslint-plugin-react/issues/678#issue-165177220)]))
+
+
+
+## Tests
+With Yarn:
+```
+yarn run test
+```
+
+With NPM:
+```
+npm run test
+```
+
+
+## Credits
+Initially a fork from [react-click-outside](https://github.com/kentor/react-click-outside).
+Thanks to [Dan Abramov](https://github.com/gaearon) for the solution of [using callback refs](https://github.com/yannickcr/eslint-plugin-react/issues/678#issuecomment-232293175).
+
+## Licence
+
+[Apache-2.0](LICENSE.txt)
