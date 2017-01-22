@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-const wrapWithClickOut = (ToWrap) => {
-  class ClickOut extends Component {
+const wrapWithClickout = (ToWrap) => {
+  class Clickout extends Component {
     constructor() {
       super();
       this.handler = this.handler.bind(this);
@@ -17,27 +17,29 @@ const wrapWithClickOut = (ToWrap) => {
     }
 
     handler(e) {
-      const wrapperNode = ReactDOM.findDOMNode(this);
+      const wrapperNode = this.wrapperNode;
       const wrappedComponent = this.wrappedComponent;
 
       if ((!wrapperNode || !wrapperNode.contains(e.target)) &&
-        typeof wrappedComponent.handleClickOut === 'function'
+        typeof wrappedComponent.handleClickout === 'function'
       ) {
-        wrappedComponent.handleClickOut(e);
+        wrappedComponent.handleClickout(e);
       }
     }
 
     render() {
       return (
-        <ToWrap
-          {...this.props}
-          ref={c => { this.wrappedComponent = c; }}
-        />
+        <div ref={(r) => { this.wrapperNode = r; }}>
+          <ToWrap
+            {...this.props}
+            ref={(c) => { this.wrappedComponent = c; }}
+          />
+        </div>
       );
     }
   }
-  return ClickOut;
+  return Clickout;
 };
 
-export default wrapWithClickOut;
+export default wrapWithClickout;
 
