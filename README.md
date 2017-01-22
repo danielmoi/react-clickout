@@ -24,7 +24,7 @@ Such a "`clickout`" event will call the wrapped component's `handleClickout` met
 See the test suite for more detailed example usage.
 
 ```js
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
 import wrapWithClickout from 'react-clickout';
 
 class ToWrap extends Component {
