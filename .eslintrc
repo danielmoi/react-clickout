@@ -1,17 +1,17 @@
 {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "rules": {
-    "indent": 2
+    "indent": 2,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
   "globals": {
     "describe": true,
     "it": false,
-    "beforeEach": true,
-    "before": true,
     "xit": false,
+    "before": true,
+    "beforeEach": true,
     "afterEach": true,
-    "mountWithIntl": true,
-    "shallowWithIntl": true,
-  },
-  "parser": "babel-eslint"
+    "document": true
+  }
 }
