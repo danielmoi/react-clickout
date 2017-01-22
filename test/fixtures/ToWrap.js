@@ -11,19 +11,26 @@ class ToWrap extends Component {
   constructor() {
     super();
     this.handleClickout = this.handleClickout.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.toggleBox = this.toggleBox.bind(this);
+    this.hideBox = this.hideBox.bind(this);
     this.state = {
       isVisible: true,
     };
   }
   handleClickout() {
+    this.hideBox();
+  }
+
+  toggleBox() {
     this.setState({
-      isVisible: false,
+      isVisible: !this.state.isVisible,
     });
   }
 
-  handleClick() {
-    this.handleClickout();
+  hideBox() {
+    this.setState({
+      isVisible: false,
+    });
   }
 
   render() {
@@ -41,8 +48,15 @@ class ToWrap extends Component {
         }
 
         <button
-          className="to-wrap__button"
-          onClick={this.handleClick}
+          className="to-wrap__button to-wrap__button--toggle"
+          onClick={this.toggleBox}
+        >
+          Toggle Box
+        </button>
+
+        <button
+          className="to-wrap__button to-wrap__button--hide"
+          onClick={this.handleClickout}
         >
           Hide Box
         </button>
