@@ -90,6 +90,7 @@ npm run test
 
 ## Credits
 Initially a fork from [react-click-outside](https://github.com/kentor/react-click-outside).
+
 Thanks to [Dan Abramov](https://github.com/gaearon) for the solution of [using callback refs](https://github.com/yannickcr/eslint-plugin-react/issues/678#issuecomment-232293175).
 
 ## Licence
