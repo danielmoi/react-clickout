@@ -21,7 +21,7 @@ npm install react-clickout
 ## Usage
 `react-clickout` returns a Higher Order Component that wraps a provided component with the ability to detect a `click` event outside of that component.
 
-Such a "`clickout`" event will call the wrapped component's `handleClickout` method.
+Such a "`clickout`" event will call the wrapped component's `handleClickout` method. (Note the character casing.)
 
 See the test suite for more detailed example usage.
 
