@@ -70,8 +70,8 @@ export default wrapWithClickout(ToWrap);
 ```
 
 ## Details
-- uses higher order functions (does not use mixins)
-- uses callback refs (does not use `ReactDOM.findDOMNode)` (which will eventually be deprecated (see [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md) and [here](https://github.com/yannickcr/eslint-plugin-react/issues/678#issue-165177220)))
+- React Clickout uses higher order functions (instead of using mixins)
+- React Clickout also uses callback refs (instead of `ReactDOM.findDOMNode)` (which will eventually be deprecated (see [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md) and [here](https://github.com/yannickcr/eslint-plugin-react/issues/678#issue-165177220)))
 
 
 
