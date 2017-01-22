@@ -40,7 +40,10 @@ class ToWrap extends Component {
             null
         }
 
-        <button onClick={this.handleClick}>
+        <button
+          className="to-wrap__button"
+          onClick={this.handleClick}
+        >
           Hide Box
         </button>
 

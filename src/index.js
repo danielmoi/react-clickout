@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 const wrapWithClickout = (ToWrap) => {
   class Clickout extends Component {
