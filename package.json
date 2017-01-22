@@ -1,6 +1,6 @@
 {
   "name": "react-clickout",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "main": "lib/index.js",
   "scripts": {
     "test": "./node_modules/.bin/_mocha -R spec ./test/test_helper.js --recursive test/**/*",
