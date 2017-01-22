@@ -5,6 +5,7 @@
 - **Refactor:** use callback refs instead of `ReactDOM.findDOMNode`
 - **Feature:** test coverage extended
 - **Feature:** README updated
+- **Feature:** Changelog added
 
 
 ## [v1.0.0]
