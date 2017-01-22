@@ -1,5 +1,3 @@
-
-
 # React Clickout
 
 [![Build Status](https://travis-ci.org/danielmoi/react-clickout.svg?branch=master)](https://travis-ci.org/danielmoi/react-clickout)
@@ -42,7 +40,7 @@ class ToWrap extends Component {
     });
   }
 
-  handleClick() {
+  toggleVisible() {
     this.setState({
       isVisible: !this.state.isVisible,
     });
@@ -59,7 +57,7 @@ class ToWrap extends Component {
             null
         }
 
-        <button onClick={this.handleClick} >
+        <button onClick={this.toggleVisible} >
           Toggle Box
         </button>
 
