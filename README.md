@@ -70,6 +70,14 @@ class ToWrap extends Component {
 export default wrapWithClickout(ToWrap);
 ```
 
+### Excluding elements from calling `handleClickout`
+- it is possible to prevent the `handleClickout` method from being called
+- the elements to be excluded should be marked with the `data-react-clickout` attribute with the value `exclude`
+```js
+<div data-react-clickout="exclude" />
+```
+
+
 ## Details
 - React Clickout uses higher order functions (instead of using mixins)
 - React Clickout also uses callback refs (instead of `ReactDOM.findDOMNode)` (which will eventually be deprecated (see [here](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md) and [here](https://github.com/yannickcr/eslint-plugin-react/issues/678#issue-165177220)))

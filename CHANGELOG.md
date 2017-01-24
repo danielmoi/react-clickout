@@ -1,3 +1,6 @@
+## [v2.1.1]
+- **Feature:** add ability to prevent the `handleClickout` method being called
+
 ## [v2.0.0]
 > Jan 22, 2017
 
