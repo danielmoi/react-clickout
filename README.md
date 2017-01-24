@@ -72,7 +72,7 @@ export default wrapWithClickout(ToWrap);
 
 ### Excluding elements from calling `handleClickout`
 - it is possible to prevent the `handleClickout` method from being called
-- the elements to be excluded should be marked with the `data-react-clickout` attribute with the value `exclude`
+- the elements (outside the component wrapped with `react-clickout`) to be excluded should be marked with the `data-react-clickout` attribute with the value `exclude`
 ```js
 <div data-react-clickout="exclude" />
 ```
