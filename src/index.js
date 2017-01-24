@@ -22,6 +22,9 @@ const wrapWithClickout = (ToWrap) => {
       if ((!wrapperNode || !wrapperNode.contains(e.target)) &&
         typeof wrappedComponent.handleClickout === 'function'
       ) {
+        const flag = e.target.dataset.reactClickout;
+        if (flag === 'exclude') return;
+
         wrappedComponent.handleClickout(e);
       }
     }
