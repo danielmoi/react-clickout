@@ -5,11 +5,13 @@
   "scripts": {
     "test": "./node_modules/.bin/_mocha -R spec ./test/test_helper.js --recursive test/**/*",
     "build": "babel src --out-dir lib",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "go": "watchexec -e js -w src -r yarn build"
   },
   "author": "Daniel Moi",
   "license": "Apache-2.0",
   "dependencies": {
+    "classnames": "^2.2.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },

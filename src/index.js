@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
-const wrapWithClickout = (ToWrap) => {
+const wrapWithClickout = (ToWrap, opts = {}) => {
   class Clickout extends Component {
     constructor() {
       super();
@@ -30,8 +31,16 @@ const wrapWithClickout = (ToWrap) => {
     }
 
     render() {
+      const { wrapperStyle } = opts;
+      const wrapperStyles = {
+        rc__wrapper: true,
+        [wrapperStyle]: wrapperStyle,
+      };
       return (
-        <div ref={(r) => { this.wrapperNode = r; }}>
+        <div
+          ref={(r) => { this.wrapperNode = r; }}
+          className={classNames(wrapperStyles)}
+        >
           <ToWrap
             {...this.props}
             ref={(c) => { this.wrappedComponent = c; }}
