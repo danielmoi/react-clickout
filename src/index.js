@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import classNames from 'classnames';
 
 const wrapWithClickout = (ToWrap, opts = {}) => {
-  class Clickout extends Component {
+  class Clickout extends React.Component {
     constructor() {
       super();
       this.handler = this.handler.bind(this);
