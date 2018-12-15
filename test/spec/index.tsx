@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { expect } from 'chai';
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 import { shallow, mount } from 'enzyme';
 import { spy } from 'sinon';
 

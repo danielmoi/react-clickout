@@ -1,6 +1,9 @@
-/*eslint-disable*/
-require('babel-register')();
-const chai = require('chai');
+require('@babel/register')({ extensions: ['.js', '.jsx', '.ts', '.tsx'] });
+const Enzyme = require('enzyme');
+const Adapter = require('enzyme-adapter-react-16');
+
+Enzyme.configure({ adapter: new Adapter() });
+
 const jsdom = require('jsdom').jsdom;
 
 const exposedProperties = ['window', 'navigator', 'document'];
@@ -13,5 +16,3 @@ Object.keys(document.defaultView).forEach((property) => {
     global[property] = document.defaultView[property];
   }
 });
-
-

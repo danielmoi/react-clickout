@@ -1,3 +1,10 @@
+# Changelog
+
+
+## [2.4]
+- **Chore:** React upgraded to 16.6
+- **Chore:** React and ReactDOM moved to peer dependencies
+
 ## [v2.1.1]
 - **Feature:** add ability to prevent the `handleClickout` method being called
 
@@ -11,6 +18,7 @@
 - **Feature:** Changelog added
 
 
+------------------------------------------------------------
 ## [v1.0.0]
 > Jan 16, 2017
 

@@ -1,2 +1,10 @@
 src
 test
+
+.vscode
+.gitignore
+.travis.yml
+.eslint*
+.babelrc
+babel.config.js
+tsconfig.json

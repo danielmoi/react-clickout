@@ -1,15 +1,14 @@
-import React, { PropTypes, Component } from 'react';
+import * as React from 'react';
 
-class ToWrap extends Component {
-  static propTypes = {
-    text: PropTypes.string,
-  };
-  static defaultProps = {
-    text: '',
-  };
-
-  constructor() {
-    super();
+type Props = {
+  text: string;
+}
+type State = {
+  isVisible: boolean;
+}
+class ToWrapComponent extends React.Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
     this.handleClickout = this.handleClickout.bind(this);
     this.toggleBox = this.toggleBox.bind(this);
     this.hideBox = this.hideBox.bind(this);
@@ -66,4 +65,4 @@ class ToWrap extends Component {
   }
 }
 
-export default ToWrap;
+export default ToWrapComponent;
