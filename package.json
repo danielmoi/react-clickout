@@ -2,11 +2,14 @@
   "name": "react-clickout",
   "version": "3.0.0",
   "main": "dist/index.js",
-  "typings": "dist/src/index.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "./node_modules/.bin/_mocha -R spec ./test/test_helper.js --recursive test/**/*",
-    "build": "tsc --emitDeclarationOnly && babel src --out-dir dist --extensions \".ts,.tsx\"",
-    "prepublish": "npm run build",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:compile": "babel src --out-dir dist --extensions \".ts,.tsx\"",
+    "build:copy": "cp ./types/src/index.d.ts ./dist/index.d.ts",
+    "build": "npm run build:types && npm run build:compile && npm run build:copy",
+    "prepublishOnly": "npm run build",
     "go": "watchexec -e js,json,ts,tsx -w src -r yarn build"
   },
   "author": "Daniel Moi",
