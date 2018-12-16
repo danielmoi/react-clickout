@@ -1,6 +1,6 @@
 {
   "name": "react-clickout",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
