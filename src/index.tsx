@@ -41,7 +41,7 @@ export const withClickout = <P extends object>(ToWrap: React.ComponentType<P> & 
 
     render() {
       const { wrapperStyle = '', dataId = '' } = opts;
-      const containerClassName = ['rc__wrapper', wrapperStyle].join('');
+      const containerClassName = ['rc__wrapper', wrapperStyle].join(' ');
       const divProps = dataId ? { 'data-id': dataId, } : {};
       return (
         <div
