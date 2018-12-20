@@ -7,7 +7,7 @@ type Options = {
 type ToWrap = {
   handleClickout?: (e: Event) => void;
 }
-export const withClickout = <P extends object>(ToWrap: React.ComponentType<P> & ToWrap, opts: Options = {}): React.ComponentType<P> => {
+export const withClickout = <P extends object>(ToWrap: React.ComponentClass<P> & ToWrap, opts: Options = {}): React.ComponentType<P> => {
   class Clickout extends React.Component<P> {
     containerDiv: HTMLDivElement | null;
     toWrapComponent: React.Component & ToWrap;
